@@ -3,7 +3,7 @@ body {
   background-color:#000000;
   color:#FFFFFF;
 }
-body * {
+body > * {
   background-color:#101010;
   color:#FFFFFF;
 }
