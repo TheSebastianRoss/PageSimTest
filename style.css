@@ -50,8 +50,8 @@ main {
 footer {
   position: absolute;
   height: var(--footer-height);
-  margin-bottom: 0;
-  margin-left: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
   overflow: hidden;
 }
