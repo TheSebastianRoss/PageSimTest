@@ -8,8 +8,21 @@ body * {
   color:#FFFFFF;
 }
 main {
-  margin-left: 2em;
-  margin-right: 2em;
-  min-width: 4em;
+  margin-left: 8em;
+  margin-right: 8em;
+  min-width: 16em;
+}
+.scroll-left > * {
+  text-align: center;
+  transform: translateX(100%);
+  animation: scroll-left 10s linear infinite;
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
