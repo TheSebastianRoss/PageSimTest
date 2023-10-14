@@ -12,8 +12,10 @@ main {
   margin-right: 8em;
   min-width: 16em;
 }
-.scroll-left > * {
+.scroll-left * {
   background-color:#00000000;
+}
+.scroll-left > * {
   text-align: center;
   transform: translateX(100%);
   animation: scroll-left 10s linear infinite;
