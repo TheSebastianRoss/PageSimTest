@@ -27,7 +27,7 @@ main {
 .scroll-left > * {
   text-align: center;
   transform: translateX(100%);
-  animation: scroll-left 7.5s linear infinite;
+  animation: scroll-left 10s linear infinite;
 }
 @keyframes scroll-left {
   0% {
