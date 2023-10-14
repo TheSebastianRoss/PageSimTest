@@ -1,0 +1,15 @@
+
+body {
+  background-color:#000000;
+  color:#FFFFFF;
+}
+body * {
+  background-color:#101010;
+  color:#FFFFFF;
+}
+main {
+  margin-left: 2em;
+  margin-right: 2em;
+  min-width: 4em;
+}
+
