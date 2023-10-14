@@ -47,12 +47,4 @@ main {
     transform: translateX(-100%);
   }
 }
-footer {
-  position: absolute;
-  height: var(--footer-height);
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-}
 
