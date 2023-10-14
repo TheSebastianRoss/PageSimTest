@@ -1,4 +1,11 @@
 
+:root {
+  --footer-height: 100px;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
   background-color:#000000;
   color:#FFFFFF;
@@ -20,6 +27,7 @@ main {
   margin-left: 8em;
   margin-right: 8em;
   min-width: 16em;
+  margin-bottom: var(--footer-height);
 }
 .scroll-left * {
   background-color:#00000000;
@@ -36,5 +44,13 @@ main {
   100% {
     transform: translateX(-100%);
   }
+}
+footer {
+  position: absolute;
+  height: var(--footer-height);
+  margin-bottom: 0;
+  margin-left: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
