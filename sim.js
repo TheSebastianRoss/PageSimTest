@@ -13,7 +13,7 @@ const globalRandomizerSeed = 14;
 const globalRandomizer = mulberry32(globalRandomizerSeed);
 
 class GameView {
-	const gameIDRandomizer = mulberry32(globalRandomizer());
+	static gameIDRandomizer = mulberry32(globalRandomizer());
 	constructor(homeScore, awayScore, balls, strikes, bases, inning, inningBottom, message, gameOver) {
 		this.homeScore    = homeScore    || 0;
 		this.awayScore    = awayScore    || 0;
