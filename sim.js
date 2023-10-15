@@ -68,7 +68,7 @@ let controller = {
 	startSimulation: function() {
 		model.startSimulation();
 	},
-	subscibeToView: function(updateFunction) {
+	subscribeToView: function(updateFunction) {
 		model.subscriberUpdateFunctions.push(updateFunction);
 	}
 };
