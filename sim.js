@@ -25,6 +25,7 @@ class GameView {
 		this.message      = message      || "";
 		this.gameOver     = gameOver     || false;
 		this.gameID       = (new Date().getTime()).toString(36) + gameIDRandomizer();
+		console.log(`Game ${this.gameID} created`);
 	}
 };
 
@@ -43,10 +44,13 @@ let model = {
 		let game1View = new GameView(6, 9, 1, 2, ["Lenny Crumb", null, null], 1, false, "Lenny Crumb hit a single!", false);
 		// To-do: view recalculation logic
 		view.gameViews[0] = game1View;
+		console.log(game1View);
+		console.log(view.gameViews[0]);
 		// To-do: termination logic
 		terminate = true;
 		
 		for(let subscriberUpdateFunction of model.subscriberUpdateFunctions) {
+			console.log(`Updating subscriber ${subscriberUpdateFunction}`);
 			subscriberUpdateFunction(view);
 		}
 
@@ -58,9 +62,11 @@ let model = {
 		}
 		model.simulationStarted = true;
 		let terminate = false;
+		console.log("Starting simulation");
 		while(terminate === false) {
 			terminate = model.update();
 		}
+		console.log("Terminating simulation");
 	}
 };
 
