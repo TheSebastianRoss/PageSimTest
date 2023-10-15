@@ -4,6 +4,30 @@
 		<meta charset="utf-8">
 		<title>Bxaseball</title>
 		<link rel="stylesheet" href="./style.css"></link>
+		<script src="sim.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				controller.subscribeToView(function(viewData) {
+					// temporarily hardcode for game 1
+					let game1View = viewData.gameViews[0];
+					let game1Section = document.querySelectorAll("#games > .game")[0];
+					game1Section.querySelectorAll(".game-away-score")[0].textContent = game1View.awayScore;
+					game1Section.querySelectorAll(".game-home-score")[0].textContent = game1View.homeScore;
+					
+					game1Section.querySelectorAll(".game-inning-number")[0].textContent = game1View.inning;
+					game1Section.querySelectorAll(".game-half-inning")[0].textContent = (game1View.inningBottom)? "⬇️": "⬆️";
+					
+					game1Section.querySelectorAll(".game-base-first")[0].textContent = game1View.bases[0];
+					game1Section.querySelectorAll(".game-base-second")[0].textContent = game1View.bases[1];
+					game1Section.querySelectorAll(".game-base-third")[0].textContent = game1View.bases[2];
+					
+					game1Section.querySelectorAll(".game-count-balls")[0].textContent = game1View.balls;
+					game1Section.querySelectorAll(".game-count-strikes")[0].textContent = game1View.strikes;
+					
+					game1Section.querySelectorAll(".game-message-text")[0].textContent = game1View.message;
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<header>
@@ -16,11 +40,27 @@
 			</div>
 		</header>
 		<main>
-			<article>
+			<article id="games">
 				<h2>Games</h2>
-				<section>
-					<h3>Game 1</h3>
-					
+				<section id="game-1" class="game">
+					<h3>Game 1 (test)</h3>
+					<div class="game-score">
+						<span class="game-away-score"></span> - <span class="game-home-score"></span>
+					</div>
+					<div class="game-inning">
+						<span class="game-inning-number"></span> (<span class="game-half-inning"></span>)
+					</div>
+					<div class="game-bases">
+						<span class="game-base-first"></span>
+						<span class="game-base-second"></span>
+						<span class="game-base-third"></span>
+					</div>
+					<div class="game-count">
+						<span class="game-count-balls"></span> - <span class="game-count-strikes"></span>
+					</div>
+					<div class="game-message">
+						<span class="game-message-text"></span>
+					</div>
 				</section>
 			</article>
 		</main>
