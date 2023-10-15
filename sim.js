@@ -19,7 +19,7 @@ class GameView {
 		this.awayScore    = awayScore    || 0;
 		this.balls        = balls        || 0;
 		this.strikes      = strikes      || 0;
-		this.bases        = bases        || [];
+		this.bases        = bases        || [null, null, null];
 		this.inning       = inning       || 0;
 		this.inningBottom = inningBottom || false;
 		this.message      = message      || "";
@@ -40,7 +40,9 @@ let model = {
 		let terminate = false;
 
 		// To-do: simulation logic
+		let game1View = new GameView(6, 9, 1, 2, ["Lenny Crumb", null, null], 1, false, "Lenny Crumb hit a single!", false);
 		// To-do: view recalculation logic
+		view.gameViews[0] = game1View;
 		// To-do: termination logic
 		terminate = true;
 		
