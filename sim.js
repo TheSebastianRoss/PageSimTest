@@ -14,7 +14,9 @@ const globalRandomizer = mulberry32(globalRandomizerSeed);
 
 class GameView {
 	const gameIDRandomizer = mulberry32(globalRandomizer());
-	constructor(balls, strikes, bases, inning, inningBottom, message, gameOver) {
+	constructor(homeScore, awayScore, balls, strikes, bases, inning, inningBottom, message, gameOver) {
+		this.homeScore    = homeScore    || 0;
+		this.awayScore    = awayScore    || 0;
 		this.balls        = balls        || 0;
 		this.strikes      = strikes      || 0;
 		this.bases        = bases        || [];
