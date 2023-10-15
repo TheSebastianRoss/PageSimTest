@@ -47,4 +47,16 @@ main {
     transform: translateX(-100%);
   }
 }
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: stretch;
+}
+aside {
+  min-width: 10%;
+}
+article {
+  min-width: 50%;
+}
 
