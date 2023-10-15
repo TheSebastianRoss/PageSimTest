@@ -11,9 +11,9 @@ function mulberry32(a) {
 
 const globalRandomizerSeed = 14;
 const globalRandomizer = mulberry32(globalRandomizerSeed);
+const gameIDRandomizer = mulberry32(globalRandomizer());
 
 class GameView {
-	// static gameIDRandomizer = mulberry32(globalRandomizer());
 	constructor(homeScore, awayScore, balls, strikes, bases, inning, inningBottom, message, gameOver) {
 		this.homeScore    = homeScore    || 0;
 		this.awayScore    = awayScore    || 0;
@@ -24,8 +24,7 @@ class GameView {
 		this.inningBottom = inningBottom || false;
 		this.message      = message      || "";
 		this.gameOver     = gameOver     || false;
-		// this.gameID       = (new Date().getTime()).toString(36) + gameIDRandomizer();
-		this.gameID       = (new Date().getTime()).toString(36) + globalRandomizer();
+		this.gameID       = (new Date().getTime()).toString(36) + gameIDRandomizer();
 	}
 };
 
