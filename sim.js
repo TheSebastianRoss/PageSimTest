@@ -1,5 +1,19 @@
 "use strict";
+
+function mulberry32(a) {
+    return function() {
+      var t = a += 0x6D2B79F5;
+      t = Math.imul(t ^ t >>> 15, t | 1);
+      t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    }
+}
+
+const globalRandomizerSeed = 14;
+const globalRandomizer = mulberry32(globalRandomizerSeed);
+
 class GameView {
+	const gameIDRandomizer = mulberry32(globalRandomizer());
 	constructor(balls, strikes, bases, inning, inningBottom, message, gameOver) {
 		this.balls        = balls        || 0;
 		this.strikes      = strikes      || 0;
@@ -8,6 +22,7 @@ class GameView {
 		this.inningBottom = inningBottom || false;
 		this.message      = message      || "";
 		this.gameOver     = gameOver     || false;
+		this.gameID       = (new Date().getTime()).toString(36) + gameIDRandomizer();
 	}
 };
 
