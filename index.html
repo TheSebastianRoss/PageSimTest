@@ -8,6 +8,9 @@
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
 				controller.subscribeToView(function(viewData) {
+					let tickerText = document.querySelector("#ticker-text");
+					tickerText.textContent = viewData.tickerMessage;
+					
 					// temporarily hardcode for game 1
 					let game1View = viewData.gameViews[0];
 					let game1Section = document.querySelectorAll("#games > .game")[0];
@@ -23,9 +26,6 @@
 					
 					game1Section.querySelectorAll(".game-count-balls")[0].textContent = game1View.balls;
 					game1Section.querySelectorAll(".game-count-strikes")[0].textContent = game1View.strikes;
-					
-					let tickerText = document.querySelector("#ticker-text");
-					game1Section.textContent = viewData.tickerMessage;
 					
 					game1Section.querySelectorAll(".game-message-text")[0].textContent = game1View.message;
 				});
