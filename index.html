@@ -24,6 +24,9 @@
 					game1Section.querySelectorAll(".game-count-balls")[0].textContent = game1View.balls;
 					game1Section.querySelectorAll(".game-count-strikes")[0].textContent = game1View.strikes;
 					
+					let tickerText = document.querySelector("#ticker-text");
+					game1Section.textContent = viewData.tickerMessage;
+					
 					game1Section.querySelectorAll(".game-message-text")[0].textContent = game1View.message;
 				});
 				
